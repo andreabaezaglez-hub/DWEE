@@ -9,4 +9,4 @@ function validarEmail(email) {
 
 console.log(validarEmail("javier.ferrer@iesmartinezm.es")); // true
 console.log(validarEmail("javier.ferrer@iesmartinezm")); // false
-console.log(validarEmail("javier.ferrer@gmail.com")); // true
+console.log(validarEmail("javier29.ferrer@gmail.com")); // true

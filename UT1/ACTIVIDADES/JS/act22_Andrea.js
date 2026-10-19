@@ -1,7 +1,7 @@
 "use strict";
 // 22. Programa una función para contar el número de veces que se repite una palabra en un texto largo.
 
-function contarPalabra(cadena = "", palabra = "") {
+let contarPalabra = (cadena = "", palabra = "") =>{
   
   let contador = 0;
   let arr = cadena.toLowerCase().split(" ");
@@ -14,6 +14,7 @@ function contarPalabra(cadena = "", palabra = "") {
 
   return `La palabra "${palabra}" se repite ${contador} veces.`;
 }
+
 
 // Pruebas
 console.log(contarPalabra("hola mundo adios mundo", "mundo")); // 2

@@ -15,5 +15,16 @@ function calcularEdad(fechaNacimiento = "") {
   return `La persona tiene ${edad} años.`;
 }
 
+// Hacer control de errores en el formato de la fecha de nacimiento
+function validarFecha(fechaNacimiento) {
+  let fechaNac = new Date(fechaNacimiento);
+  if (isNaN(fechaNac.getTime())) {
+    return "Formato de fecha no válido. Por favor, use el formato YYYY-MM-DD.";
+  }
+  return calcularEdad(fechaNacimiento);
+}
+
 // Pruebas
-console.log(calcularEdad("1995-05-15"));
+console.log(validarFecha("1995-05-15")); // Debería devolver la edad correcta
+console.log(validarFecha("2000-19-10")); // Debería devolver un mensaje de error
+

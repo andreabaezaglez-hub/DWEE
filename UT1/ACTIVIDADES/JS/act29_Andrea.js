@@ -1,7 +1,7 @@
 "use strict";
 // 29. Programa una función para convertir números de base binaria a decimal y viceversa.
 
-function convertirBase(numero = null, base = null) {
+let convertirBase = (numero = null, base = null) => {
   if (base === 2) {
     let decimal = parseInt(numero.toString(), 2);
     return `${numero} base 2 = ${decimal} base 10`;
