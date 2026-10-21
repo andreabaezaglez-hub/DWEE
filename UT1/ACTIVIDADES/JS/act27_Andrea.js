@@ -1,18 +1,18 @@
 "use strict";
-// 27. En un vector de números, indicar:
-// a) El número de elementos del vector.
-// b) Cuántos son pares e impares y cuáles son.
-// c) La suma de todos los números negativos.
-// d) El producto de todos los números positivos.
-// e) Cuántos son primos y cuáles son.
-// f) Los números que ocupan las posiciones pares del vector.
-// g) El número mayor.
-// h) El número menor.
-// i) La media de todos los números y los números que están por encima y por debajo.
-// j) El vector ordenado de mayor a menor y viceversa.
-// k) Buscar un valor introducido por el usuario e indicar si existe o no.
+/* 27. En un vector de números, indicar:
+ a) El número de elementos del vector.
+ b) Cuántos son pares e impares y cuáles son.
+ c) La suma de todos los números negativos.
+ d) El producto de todos los números positivos.
+ e) Cuántos son primos y cuáles son.
+ f) Los números que ocupan las posiciones pares del vector.
+ g) El número mayor.
+ h) El número menor.
+ i) La media de todos los números y los números que están por encima y por debajo.
+ j) El vector ordenado de mayor a menor y viceversa.
+ k) Buscar un valor introducido por el usuario e indicar si existe o no.*/
 
-const readline = require("node:readline");
+
 
 let v = [2, -3, 4, 7, 0, 11, -5, 8];
 
@@ -58,12 +58,11 @@ console.log("j) Ascendente:", [...v].sort((a, b) => a - b));
 console.log("Descendente:", [...v].sort((a, b) => b - a));
 
 // k) Buscar número
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
 
-rl.question("k) Número a buscar: ", n => {
-    console.log(v.includes(Number(n)) ? "Existe" : "No existe");
-    rl.close();
-});
+let buscar = prompt ("Introduce un valor: ")
+if (v.includes(buscar)){
+    console.log("El número ${buscar} se encuentra en ${v}")
+}else{
+    console.log("El número ${buscar} no se encuentra en ${v}")
+}
+
