@@ -1,9 +1,16 @@
 "use strict";
-/* 35Programa una función que dado un array numérico devuelve otro array con los números
+/* 35Programa una función que dado un array numérico devuelve 
+otro array con los números
 elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25]*/
 
 function elevarAlCuadrado(array) {
-    return array.map(num => num ** 2);
+    //return array.map(num => num ** 2);
+    let arrayElevado = [...array];
+
+    for (let i = 0; i<array.length; i++){
+         arrayElevado[i] = Math.pow(array[i], 2); 
+    }
+    return arrayElevado;
 }
 
 console.log(elevarAlCuadrado([1, 4, 5])); // [1, 16, 25]

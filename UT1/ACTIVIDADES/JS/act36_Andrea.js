@@ -1,11 +1,15 @@
 "use strict";
-/* 36. Programa una función que dado un array devuelva el número más alto y el más bajo de dicho array, 
+/* 36. Programa una función que dado un array devuelva el número más alto 
+y el más bajo de dicho array, 
 p.e. miFuncion([1,5,34,99,-2]) devolverá [99,-60]*/
 
 function obtenerMaxMin(array) {
+    if (array instanceof Array){
     let mayor = Math.max(...array);
     let menor = Math.min(...array);
     return [mayor, menor];
+    }
+    return null;
 }
 
 console.log(obtenerMaxMin([1, 5, 34, 99, -2])); // [99, -2]
