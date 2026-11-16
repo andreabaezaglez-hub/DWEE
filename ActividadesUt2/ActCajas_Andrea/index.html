@@ -24,16 +24,23 @@
             background-color: lightcoral;
             height: 150px;
             width: 150px;
-            cursor: grab;
+        }
+
+        .main{
+            /* No entiendo por qué solo me deja dropear las cajas en la derecha si se supone que esto pilla el 100%*/
+            margin: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 
-<body>
+<body class="main">
 
-    <div class="cajaS" draggable="true"></div>
-    <div class="cajaM" draggable="true"></div>
-    <div class="cajaL" draggable="true"></div>
+        <div class="cajaS" draggable="true"></div>
+        <div class="cajaM" draggable="true"></div>
+        <div class="cajaL"></div>
+   
 
     <script src="actCajas.js"></script>
 </body>
