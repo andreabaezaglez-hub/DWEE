@@ -14,15 +14,19 @@
 
     let tabla = document.createElement("table");
     tabla.setAttribute("id", "idTabla");
-    document.body.appendChild(tabla);
+    tabla.style.borderCollapse = "collapse";
 
     let numero = 1;
+    const numFilas = 10;
+    const numCeldas = 10;
 
-    for (let i = 0; i < 100; i++) {
+
+    //bucle anidado para crear tabla y añadir numeros a cada celda
+    for (let i = 0; i < numFilas; i++) {
 
         let fila = document.createElement("tr");
 
-        for (let j = 0; j < 100; j++) {
+        for (let j = 0; j < numCeldas; j++) {
             let celda = document.createElement("td");
 
             celda.textContent = numero;
@@ -32,12 +36,17 @@
             numero++;
 
             celda.style.border = "1px solid black";
+            celda.style.padding = "5px";
         }
 
         tabla.appendChild(fila);
     }
 
 
+    document.body.appendChild(tabla);
+
+
+    //funcion para calcular los numeros primos
     function esPrimo(numero) {
 
         let primo = true;
@@ -57,28 +66,31 @@
         return primo;
     }
 
+
+    //botón de clcular primos y pintarlos
     boton.addEventListener("click", function () {
 
         let celdas = document.querySelectorAll("td");
 
-        celdas.forEach(function(celda){
+        celdas.forEach(function (celda) {
 
             let num = parseInt(celda.textContent);
 
             if (esPrimo(num)) {
 
-                celda.style.backgroundColor = "yellow";
+                celda.className = "numPrimo";
             }
         })
 
     })
 
-    boton1.addEventListener("click", function(){
-        
+    //boton de borrar el pintado
+    boton1.addEventListener("click", function () {
+
         let celdas = document.querySelectorAll("td");
 
-        celdas.forEach(function(celda){
-            celda.style.backgroundColor = "";
+        celdas.forEach(function (celda) {
+            celda.className = "numNormal";
         })
     })
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <style>
+        .cajaRoja {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            cursor: grab;
+        }
+
+        .cajaAzul {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            cursor: grab;
+        }
+
+        .contenedor {
+            width: 200px;
+            min-height: 200px;
+            border: 2px solid black;
+            border-radius: 20px;
+            margin-top: 20px;
+            gap: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cajaRoja" draggable="true"></div>
+    <div class="cajaAzul" draggable="true"></div>
+    <div class="contenedor"></div>
+    <script src="./js/10.dragAndDrop.js"></script>
+</body>
+
+</html>
