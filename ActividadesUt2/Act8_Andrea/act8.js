@@ -3,7 +3,6 @@
     /*Realiza un programa que al hacer doble click en la pantalla del navegador, cambie el
     fondo a un color aleatorio. */
 
-    let main = document.querySelector("main");
 
     let randomNum = (min, max) =>{
         return Math.floor(Math.random() * (max - min) + min);
