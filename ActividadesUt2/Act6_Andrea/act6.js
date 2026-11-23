@@ -21,9 +21,12 @@
             alert("Hola")
         }, 5000);
 
+        botonInicio.disabled;
     });
 
     botonStop.addEventListener("click", (evento) =>{
         clearInterval(intervalo);
+        
+        botonInicio.disabled = false;
     });
 }

@@ -12,6 +12,14 @@
     botonDesmarcar.textContent = "Desmarcar todos";
     botones.appendChild(botonDesmarcar);
 
+    let botonAgrandar  = document.createElement("button");
+    botonAgrandar.textContent = "Agrandar pares";
+    botones.appendChild(botonAgrandar);
+
+    let botonRestaurar = document.createElement("button");
+    botonRestaurar.textContent = "Restaurar números";
+    botones.appendChild(botonRestaurar);
+
     botones.style.marginBottom = "20px";
     botones.style.display = "flex";
     botones.style.gap = "10px";
@@ -23,7 +31,7 @@
 
     contenedor.style.display = "grid";
     contenedor.style.gridTemplateColumns = "repeat(10, 50px)";
-    contenedor.style.gap = "10px";
+    contenedor.style.gap = "80px";
 
 
     for (let i = 0; i < 100; i++) {
@@ -52,20 +60,20 @@
         check.addEventListener("change", function () {
 
             if (check.checked) {
-                console.log("check" + check.value + " marcado");
+                console.log("check " + check.value + " marcado");
             } else {
-                console.log("check" + check.value + " desmarcado");
+                console.log("check " + check.value + " desmarcado");
             }
         });
 
     }
 
 
-    botonMarcar.addEventListener("click", function() {
+    botonMarcar.addEventListener("click", function () {
 
         let checks = document.querySelectorAll("input[type=checkbox]");
 
-        checks.forEach(function(check) {
+        checks.forEach(function (check) {
             check.checked = true;
             check.dispatchEvent(new Event("change"));
         });
@@ -73,15 +81,40 @@
     });
 
 
-    botonDesmarcar.addEventListener("click", function() {
+    botonDesmarcar.addEventListener("click", function () {
 
         let checks = document.querySelectorAll("input[type=checkbox]");
 
-        checks.forEach(function(check) {
+        checks.forEach(function (check) {
             check.checked = false;
             check.dispatchEvent(new Event("change"));
         });
 
     });
 
+    /*    En total son 4 botones:
+        - Marcar todos los checks.
+        - Desmarcar todos los checks.
+        - Ampliar el tamaño de los checks que tienen un value par
+        - Restaurar el tamaño de los checks al tamaño original.*/
+
+
+    botonAgrandar.addEventListener("click", (evento) =>{
+
+        let checks = document.querySelectorAll("input[type=checkbox]");
+
+        checks.forEach(check =>{
+            if(check.value%2==0){
+            check.className = "grande"; 
+        }});
+        
+    });
+
+    botonRestaurar.addEventListener("click", (evento) =>{
+        let checks = document.querySelectorAll("input[type=checkbox]");
+        
+        checks.forEach(check =>{
+            check.className = "normal";
+        });
+    });
 }
