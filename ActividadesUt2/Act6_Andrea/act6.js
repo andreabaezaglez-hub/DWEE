@@ -20,13 +20,15 @@
         intervalo = setInterval(() => {
             alert("Hola")
         }, 5000);
+    }, { once: true });
 
-        botonInicio.disabled;
-    });
-
-    botonStop.addEventListener("click", (evento) =>{
+    botonStop.addEventListener("click", (evento) => {
         clearInterval(intervalo);
-        
-        botonInicio.disabled = false;
+
+        botonInicio.addEventListener("click", (evento) => {
+            intervalo = setInterval(() => {
+                alert("Hola")
+            }, 5000);
+        }, { once: true });
     });
 }

@@ -92,27 +92,49 @@
 
     let seleccion = document.querySelector("#idLenguajes");
     console.log(seleccion);
-    for(let elemento of seleccion){
+    for (let elemento of seleccion) {
         console.log(elemento);
         console.log(elemento.value);
         console.log(elemento.textContent);
 
-        if(elemento.selected){
+        if (elemento.selected) {
             console.log(`La opción seleccionada es ${elemento.value} y está en la posición ${seleccion.selectedIndex}`);
         };
     };
 
-    Array.from(seleccion.options).forEach(elemento =>  {
+    Array.from(seleccion.options).forEach(elemento => {
         console.log(`El lenguaje elegido es ${elemento.value} y tiene el valor ${elemento.textContent}`);
     });
 
     console.log(seleccion.options[seleccion.selectedIndex].value);
 
-    seleccion.addEventListener("change", function(e){
+    seleccion.addEventListener("change", function (e) {
         console.log(`El índice seleccionado es ${seleccion.selectedIndex}`);
         console.log("El valor del elemento seleccionado es " + seleccion.options[seleccion.selectedIndex].value);
         console.log("El texto del elemento seleccionado es " + seleccion.options[seleccion.selectedIndex].textContent);
     });
 
-    //--------------- FORM 3 -----------------
+    //--------------- DATA LIST -----------------
+
+
+    let listaDatos = document.querySelector("#idFrutas");
+
+    Array.from(listaDatos.options).forEach(elemento => {
+        console.log(elemento.value);
+        console.log(elemento.textContent);
+    });
+
+    let cajaEntrada = document.querySelector("#idFrutas1");
+
+    cajaEntrada.addEventListener("change", function (e) {
+        console.log(cajaEntrada.value);
+        console.log(e.target);
+
+        let opcionSeleccionada = Array.from(listaDatos.options).find((e) => e.value === cajaEntrada.value);
+        if (opcionSeleccionada !== undefined) {
+            console.log(`${opcionSeleccionada.textContent}`);
+        };
+    });
+
+
 }
